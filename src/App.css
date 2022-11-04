@@ -1,0 +1,102 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.home-container {
+  padding: 15px;
+}
+
+.pad-15 {
+  padding: 15px 0;
+}
+
+.jumbotron {
+  background-color: #fff !important;
+}
+
+.button {
+  position: relative;
+  display: inline-block;
+  margin: 30px auto;
+  padding: 5px 17px;
+  overflow: hidden;
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 60%);
+  background-color: #3999cb;
+  color: #ecf0f1;
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
+  font-size: 15px;
+}
+
+.button:hover, .button:focus {
+  background-color: #27ae60;
+}
+
+.button > * {
+  position: relative;
+}
+
+.button-holder > button > a {
+  color: #fff;;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right{
+  text-align: right;
+}
+
+.multi > select{
+  display: inline-block;
+  width: 100%;
+}
+
+/* Card CSS */
+.card-container {
+  width: 100%;
+  display: flex;
+}
+
+.card-container > .card {
+  border-radius: 15px;
+  width: 25%;
+  padding: 10px;
+  min-height: 150px;
+  background-color: #efefef;
+}
+
+.card-content > p{
+  font-size: 11px !important;
+  margin-bottom: 5px;
+}
+.card.card-1 {
+  background-image: url('./Images/poster.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
