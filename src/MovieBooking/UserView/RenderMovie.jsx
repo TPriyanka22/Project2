@@ -142,3 +142,38 @@ class RenderMovie extends PureComponent {
 }
 
 export default RenderMovie
+
+export const BookMovieModal = ({ onBookMovie, ...props }) => {
+    const [ticketText, setTicketText] = React.useState("");
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton>
+                <Modal.Title id="contained-modal-title-vcenter">
+                    Book Slot
+            </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                {/*  <textarea style={{ width: "100%", height: "300px", padding: 20 }} value={reviewText} onChange={e => setReviewText(e.target.value)}> </textarea> */}
+                <Form>
+                    <Form.Group as={Row} controlId="formPlaintexttickets">
+                        <Form.Label column sm="3">
+                            Number of Slots :
+                        </Form.Label>
+                        <Col sm="4">
+                            <Form.Control placeholder="Slots" value={ticketText} onChange={e => setTicketText(e.target.value)} />
+                        </Col>
+                    </Form.Group>
+                </Form>
+            </Modal.Body>
+            <Modal.Footer>
+                <Button variant="outline-success" onClick={e => onBookMovie(ticketText)}>Book</Button>
+
+            </Modal.Footer>
+        </Modal>
+    );
+}
