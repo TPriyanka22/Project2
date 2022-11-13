@@ -60,7 +60,10 @@ class RedirectPage extends PureComponent {
                     isUserAdmin == true &&
                     <AdminView />
                 }
-               
+                {
+                    isUserAdmin == false &&
+                    <UserView />
+                }
 
             </Fragment>
         )
