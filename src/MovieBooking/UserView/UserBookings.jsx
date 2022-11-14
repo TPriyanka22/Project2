@@ -37,7 +37,9 @@ class UserBookings extends PureComponent {
         const { userMovies } = this.state
         return (
             <div>
-                
+                <div style={{ margin: "30px" }}>
+                    <Link to="/UserView"> Go Back</Link>
+                </div>
                 <h2 className="text-center" style={{marginTop:10, marginRight:80}}>You have booked the following slots</h2>
                 {userMovies && userMovies.map(movieData => {
                     return (
