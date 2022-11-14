@@ -38,7 +38,7 @@ class UserBookings extends PureComponent {
         return (
             <div>
                 
-                <h2 className="text-center" >You have booked the following slots</h2>
+                <h2 className="text-center" style={{marginTop:10, marginRight:80}}>You have booked the following slots</h2>
                 {userMovies && userMovies.map(movieData => {
                     return (
                         <Col xl={{ span: 3, offset: 4 }}>
