@@ -1,0 +1,168 @@
+a {
+    padding: 5px 15px;
+    border: 1px solid #efefef;
+    border-radius: 8px;
+    color: #fff;
+    background: #007bff;
+    font-weight: 100;
+    font-size: 14px;
+    box-shadow: none;
+}
+
+.mini-buttons > a {
+    border: 0;
+}
+.card-container > .card {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-radius: 15px;
+    width: 32%;
+    height: 180px;
+    display: inline-block;
+    padding: 10px;
+    margin-right: 8px;
+    margin-left: 10px;
+    background-size: contain;
+    color: #000;
+    background-repeat: no-repeat;
+    position: relative;
+    margin-bottom: 15px;
+}
+.card > p {
+    font-size: 14px !important;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+.card-content > p {
+    font-size: 14px !important;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+button {
+    font-size: 10px !important;
+}
+
+.card > img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.19;
+    left: 0;
+    border-radius: 15px;
+}
+
+.card-container {
+    position: relative;
+    padding: 10px;
+}
+
+.card-content > .mini-buttons {
+    /* margin-top: 30px; */
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    z-index: 99;
+}
+
+.mini-buttons > a > button, .mini-buttons > button {
+    font-size: 14px !important;
+    font-weight: 700;
+}
+.btn-new > a, .btn-new-button {
+    display: inline-block !important;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+        -moz-appearance: none;
+            appearance: none;
+    background-color: transparent;
+    border: 2px solid #e74c3c;
+    border-radius: 0.6em;
+    color: #e74c3c;
+    cursor: pointer;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    padding: 9px 25px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+.btn-new > a:hover, .btn-new > a:focus, .btn-new-button {
+    color: #fff;
+    outline: 0;
+}
+.fifth > a, .btn-new-button {
+    border-color: #3498db;
+    border-radius: 0;
+    color: #3498db;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 150ms ease-in-out;
+}
+.fifth > a:after, .btn-new-button:after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 100%;
+    background: #3498db;
+    z-index: -1;
+    transition: width 150ms ease-in-out;
+}
+.fifth > a:hover, .btn-new-button:hover {
+    color: #fff;
+}
+.fifth > a:hover:after, .btn-new-button:hover:after {
+    width: 110%;
+}
+
+button.btn-new-button.fifth.btn.btn-custom {
+    border: 2px solid #3498db;
+    font-size: 13px !important;
+    font-weight: 700;
+    color: #3498db;
+    width: 100px;
+    border-radius: 0;
+}
+
+button.btn-new-button.fifth.btn.btn-custom:hover {
+    color: #fff;
+}
+
+/* Form CSS */
+
+.form-container {
+    margin: 10px;
+    border: 0 !important;
+}
+
+.file-uploader {
+    border: 0 !important;
+    margin-bottom: 10px;
+}
+
+.file-uploader > .card-body {
+    padding: 0;
+}
+
+.help-text {
+    font-size: 11px;
+    color: #6a6060;
+}
+
+.form-group > input, .form-group > input:focus {
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    box-shadow: none;
+    outline: 0;
+    border-radius: 0;
+}
