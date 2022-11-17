@@ -3,7 +3,7 @@ a {
     border: 1px solid #efefef;
     border-radius: 8px;
     color: #fff;
-    background: #007bff;
+  
     font-weight: 100;
     font-size: 14px;
     box-shadow: none;
@@ -129,7 +129,7 @@ button.btn-new-button.fifth.btn.btn-custom {
     font-size: 13px !important;
     font-weight: 700;
     color: #3498db;
-    width: 100px;
+    width: 110px;
     border-radius: 0;
 }
 
@@ -165,4 +165,13 @@ button.btn-new-button.fifth.btn.btn-custom:hover {
     box-shadow: none;
     outline: 0;
     border-radius: 0;
+}
+
+.card-container.user-view {
+    display: inline;
+    padding: 0;
+}
+
+.card-container.user-view > .card {
+    width: 47%;
 }
