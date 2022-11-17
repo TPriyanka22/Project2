@@ -12,7 +12,7 @@ export const movieService = {
     deleteCast
 }
 export const apiConfig = {
-    endpointURL: "http://localhost:3001",
+    endpointURL: "https://showtimedrivein.com/api",
 }
 function getAll() {
     const requestOption = {
@@ -71,37 +71,6 @@ function createMovie(userEmail, movie_name, about, genre, releasedate, bookingda
     })
 }
 
-function updateEvent(eventId, name, location, categories, address, city, state, postal_code, garage, street, validated, lot, valet, date, time) {
-    console.log(eventId, name, location, categories, address, city, state, postal_code, garage, street, validated, lot, valet, date, time)
-    const requestOption = {
-        method: 'PUT',
-        body: JSON.stringify({
-            "name": name,
-            "location": location,
-            "date": date,
-            "time": time,
-            "categories": categories,
-            "address": address,
-            "city": city,
-            "state": state,
-            "postal_code": postal_code,
-            "attributes": {
-                "BusinessParking": {
-                    "garage": garage,
-                    "street": street,
-                    "validated": validated,
-                    "lot": lot,
-                    "valet": valet
-                }
-            }
-        }),
-        headers: { "Content-Type": "application/json" }
-    }
-    return fetch(`${apiConfig.endpointURL}/movies/${eventId}`, requestOption).then(res => {
-        //            console.log(res.json());
-        return res.json();
-    })
-}
 function updateMovie(movieId, name, location, city, about, genre, release_date, booking_date, booking_time, movie_length) {
     
     const requestOption = {
@@ -151,8 +120,6 @@ function deleteCast(image_name) {
     return fetch(`${apiConfig.endpointURL}/users/${image_name}/deletecast`, requestOption)
 }
 function createMovieBooking(movieId, movieName, location, booking_date, ticket_count, userEmail) {
-   // console.log(movieId, eventName, location, date, ticket_count, userEmail)
-
     const requestOption = {
         method: 'POST',
         body: JSON.stringify({
@@ -177,7 +144,6 @@ function getMovieBookingByUserID(userEmail) {
         headers: { "Content-Type": "application/json" }
     }
     return fetch(`${apiConfig.endpointURL}/users/${userEmail}/booking`, requestOption).then(res => {
-        //console.log(res); 
         return res.json();
     })
 }
