@@ -1,0 +1,12 @@
+{
+  "version": "1",
+  "cognitoConfig": {
+    "identityPoolName": "finalcloudprojectrea_identitypool_85c68f05",
+    "allowUnauthenticatedIdentities": true,
+    "authSelections": "identityPoolOnly",
+    "resourceName": "finalcloudprojectrea",
+    "sharedId": "85c68f05",
+    "serviceName": "Cognito",
+    "useDefault": "manual"
+  }
+}

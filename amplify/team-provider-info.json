@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-finalcloudprojectrea-dev-142622-authRole",
+      "UnauthRoleArn": "arn:aws:iam::130140781510:role/amplify-finalcloudprojectrea-dev-142622-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::130140781510:role/amplify-finalcloudprojectrea-dev-142622-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-finalcloudprojectrea-dev-142622-deployment",
+      "UnauthRoleName": "amplify-finalcloudprojectrea-dev-142622-unauthRole",
+      "StackName": "amplify-finalcloudprojectrea-dev-142622",
+      "StackId": "arn:aws:cloudformation:us-east-1:130140781510:stack/amplify-finalcloudprojectrea-dev-142622/0a478d00-62d9-11ed-a416-0aa433914545",
+      "AmplifyAppId": "d385zq91dur30n"
+    },
+    "categories": {
+      "auth": {
+        "finalcloudprojectrea": {}
+      },
+      "interactions": {
+        "lex8ed698b5": {
+          "deploymentBucketName": "amplify-finalcloudprojectrea-dev-142622-deployment",
+          "s3Key": "amplify-builds/lex8ed698b5-4e4f4b38383232587230-build.zip"
+        }
+      }
+    }
+  }
+}

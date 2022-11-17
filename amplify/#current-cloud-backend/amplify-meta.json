@@ -1,0 +1,67 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-finalcloudprojectrea-dev-142622-authRole",
+      "UnauthRoleArn": "arn:aws:iam::130140781510:role/amplify-finalcloudprojectrea-dev-142622-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::130140781510:role/amplify-finalcloudprojectrea-dev-142622-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-finalcloudprojectrea-dev-142622-deployment",
+      "UnauthRoleName": "amplify-finalcloudprojectrea-dev-142622-unauthRole",
+      "StackName": "amplify-finalcloudprojectrea-dev-142622",
+      "StackId": "arn:aws:cloudformation:us-east-1:130140781510:stack/amplify-finalcloudprojectrea-dev-142622/0a478d00-62d9-11ed-a416-0aa433914545",
+      "AmplifyAppId": "d385zq91dur30n"
+    }
+  },
+  "auth": {
+    "finalcloudprojectrea": {
+      "service": "Cognito",
+      "serviceType": "managed",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "signupAttributes": [],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": []
+        },
+        "mfaTypes": [],
+        "verificationMechanisms": []
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-finalcloudprojectrea-dev-142622-deployment/amplify-cfn-templates/auth/finalcloudprojectrea-cloudformation-template.json",
+        "logicalId": "authfinalcloudprojectrea"
+      },
+      "lastPushTimeStamp": "2022-11-12T22:34:56.279Z",
+      "output": {
+        "IdentityPoolId": "us-east-1:3d91bbc0-1ddb-4c48-bf5d-537122b791be",
+        "IdentityPoolName": "finalcloudprojectrea_identitypool_85c68f05__dev"
+      },
+      "lastPushDirHash": "Zccul5QNCDBolHSmyl7uN6e87Jg="
+    }
+  },
+  "interactions": {
+    "lex8ed698b5": {
+      "service": "Lex",
+      "providerPlugin": "awscloudformation",
+      "build": true,
+      "lastPackageTimeStamp": "2022-11-12T22:33:19.321Z",
+      "distZipFilename": "lex8ed698b5-4e4f4b38383232587230-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-finalcloudprojectrea-dev-142622-deployment",
+        "s3Key": "amplify-builds/lex8ed698b5-4e4f4b38383232587230-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-finalcloudprojectrea-dev-142622-deployment/amplify-cfn-templates/interactions/lex8ed698b5-cloudformation-template.json",
+        "logicalId": "interactionslex8ed698b5"
+      },
+      "lastPushTimeStamp": "2022-11-12T22:34:56.279Z",
+      "output": {
+        "FunctionArn": "arn:aws:lambda:us-east-1:130140781510:function:finalcloudprojectrea_cfnlambda_ef66f148-dev",
+        "Region": "us-east-1",
+        "BotName": "BookTrip_dev"
+      },
+      "lastPushDirHash": "WHEEQ4qdo50thpngoHMi43adH4w="
+    }
+  }
+}
