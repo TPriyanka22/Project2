@@ -1,5 +1,4 @@
 //global.fetch = require('node-fetch');
-
 export const movieService = {
     getAll,
     getMovieByID,
@@ -45,7 +44,6 @@ function getCast(imagename) {
         return res.json();
     })
 }
-
 
 function createMovie(userEmail, movie_name, about, genre, releasedate, bookingdate, bookingtime, location, city, inputFile, movielength) {
     const detailsofForm = new FormData();
@@ -138,7 +136,6 @@ function getMovieByUserID(userEmail) {
     })
 }
 
-
 function deleteMovie(userEmail, movieId) {
     const requestOption = {
         method: 'DELETE',
@@ -153,7 +150,6 @@ function deleteCast(image_name) {
     }
     return fetch(`${apiConfig.endpointURL}/users/${image_name}/deletecast`, requestOption)
 }
-
 function createMovieBooking(movieId, movieName, location, booking_date, ticket_count, userEmail) {
    // console.log(movieId, eventName, location, date, ticket_count, userEmail)
 
