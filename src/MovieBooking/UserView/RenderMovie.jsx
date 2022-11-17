@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import { Button, Card, Row, Col, Modal, Form } from 'react-bootstrap';
 import { movieService } from '../../services/MovieService';
+import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
 
 class RenderMovie extends PureComponent {
@@ -67,13 +68,19 @@ class RenderMovie extends PureComponent {
         })
     }
 
+    /*setTicketText(value) {
+        this.setState({
+            ticketCount: value
+        })
+    }*/
+
     bookMovie(tickets) {
         this.setState({
             ticketCount: tickets
         })
 
-        
-        movieService.createMovieBooking(this.state.movieId, this.state.movieData.movie_name, this.state.movieData.location, this.state.movieData.booking_date, this.state.ticketCount, this.state.userEmail)
+        console.log("printing tickets",tickets);
+        movieService.createMovieBooking(this.state.movieId, this.state.movieData.movie_name, this.state.movieData.location, this.state.movieData.booking_date, tickets, this.state.userEmail)
            
             .then(json => {
                 console.log("printing inside renderevent jsx of createmoviebooking method",json);
@@ -83,12 +90,14 @@ class RenderMovie extends PureComponent {
                     });
                     console.log("printing the status of upload photo",this.state.uploadPhoto)
                     sessionStorage.setItem("BookedEventId", this.state.movieId)
+                    this.setModalShow(false)
                 
             })
             .catch(reason => {
                 console.log("Failed to fetch data from server, reason is : ", reason);
             });
-
+        
+        
 
     }
 
@@ -98,30 +107,31 @@ class RenderMovie extends PureComponent {
         const {castData} = this.state
         return (
             <div>
-                <div style={{ margin: "30px" }}>
+                <div className="btn-new fifth" style={{ margin: "30px" }}>
                     <Link to="/UserView"> Go Back</Link>
                 </div>
                 {
                     movieData && <div>
                         <Row style={{ display: "block" }}>
-                            <Col xl={{ span: 6, offset: 3 }} style={{ marginTop: "30px" }}>
+                            <Col xl={{ span: 9}} style={{ margin: "0 auto" }}>
                                 <Card style={{ marginTop: "20px" }} key={movieData.movie_id}>
                                    {/*  <Card.Img variant="top" src="holder.js/100px180?text=Image cap" /> */}
                                     <Card.Body>
-                                        <h2>{movieData.movie_name && movieData.movie_name.toUpperCase()}</h2>
+                                        <img src={"https://stdrivein.s3.amazonaws.com/"+movieData.image_name} width = '100%' height = '45%' />
+                                        <h5 style={{ marginTop: "10px" }}>{movieData.movie_name && movieData.movie_name.toUpperCase()}</h5>
                                         <p>{movieData.about}</p>
-                                        <p>Genre : {movieData.genre}</p>
-                                        <h4><a style={{ color: "blue" }}>Location :</a> {movieData.location}</h4>
+                                        <p><b>GENRE :</b> {movieData.genre}</p>
+                                        {/* <h4><a style={{ color: "blue" }}>Location :</a> {movieData.location}</h4> */}
                                         <Card.Subtitle className="mb-2 text-muted">{movieData.location}</Card.Subtitle>
-                                        <h6><a style={{ color: "red" }}>Date :</a> {movieData.release_date} &nbsp;&nbsp;<a style={{ color: "red" }}>Time :</a> {movieData.booking_time}</h6>
-                                        <p>Cast : {castData.cast}</p>
+                                        <p><h6><a style={{ color: "red" }}><b>Date :</b></a> {movieData.release_date} &nbsp;&nbsp;<a style={{ color: "red" }}><b>Time :</b></a> {movieData.booking_time}</h6></p>
+                                        <p><b>Cast :</b> {castData.cast}</p>
                                     </Card.Body>
 
            
 
+                                    <Button style={{borderRadius:0}} variant="primary" size="lg" block onClick={(e) => this.setModalShow(true)}> Book </Button>
                                     <Card.Body>
 
-                                        <Button variant="primary" size="lg" block onClick={(e) => this.setModalShow(true)}> Book </Button>
                                         <BookMovieModal
                                             show={this.state.modalShow}
                                             onHide={(e) => this.setModalShow(false)}
@@ -146,6 +156,7 @@ export default RenderMovie
 export const BookMovieModal = ({ onBookMovie, ...props }) => {
     const [ticketText, setTicketText] = React.useState("");
     return (
+      
         <Modal
             {...props}
             size="lg"
